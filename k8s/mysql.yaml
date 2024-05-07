@@ -16,14 +16,12 @@ spec:
       containers:
         - name: mysql
           # 여러분의 mariadb image 주소를 입력해주세요.
-          image: mysql:latest
+          image: mysql:8.0
           env:
             - name: TZ
               value: Asia/Seoul
             - name: MYSQL_ROOT_PASSWORD
               value: root
-			- name: MYSQL_DISABLE_UPGRADE_BACKUP
-			  value: '1'
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: data
