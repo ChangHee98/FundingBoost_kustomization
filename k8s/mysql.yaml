@@ -22,6 +22,8 @@ spec:
               value: Asia/Seoul
             - name: MYSQL_ROOT_PASSWORD
               value: root
+			- name: MYSQL_DISABLE_UPGRADE_BACKUP
+			  value: '1'
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: data
