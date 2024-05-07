@@ -1,10 +1,10 @@
-CREATE SCHEMA IF NOT EXISTS `krampoline` DEFAULT CHARACTER SET utf8mb4;
+CREATE SCHEMA IF NOT EXISTS `fundingboost` DEFAULT CHARACTER SET utf8mb4;
 
 GRANT ALL ON *.* TO 'root'@'localhost' IDENTIFIED BY 'root' WITH GRANT OPTION;
-GRANT ALL ON krampoline.* TO 'root'@'localhost';
+GRANT ALL ON fundingboost.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
 
-USE `krampoline`;
+USE `fundingboost`;
 
 CREATE TABLE `Member` (
     `member_id` BIGINT  NOT NULL    COMMENT 'Auto Increament',
