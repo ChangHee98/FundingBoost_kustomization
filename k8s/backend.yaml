@@ -23,7 +23,7 @@ spec:
               value: jdbc:mysql://mysql/fundingboost
           resources:
             requests:
-              memory: 2Gi
+              memory: 1Gi
           readinessProbe:
             httpGet:
               path: /api/v1
