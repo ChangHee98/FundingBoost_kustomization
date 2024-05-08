@@ -1,1 +1,1 @@
-FROM mysql:latest
+FROM alpine:latest
