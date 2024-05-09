@@ -6,6 +6,19 @@ FLUSH PRIVILEGES;
 
 USE `fundingboost`;
 
+DROP TABLE IF EXISTS `Member`;
+DROP TABLE IF EXISTS `Item`;
+DROP TABLE IF EXISTS `Review`;
+DROP TABLE IF EXISTS `Delivery`;
+DROP TABLE IF EXISTS `GiftHub_Item`;
+DROP TABLE IF EXISTS `Orders`;
+DROP TABLE IF EXISTS `Bookmark`;
+DROP TABLE IF EXISTS `Funding`;
+DROP TABLE IF EXISTS `Relationship`;
+DROP TABLE IF EXISTS `Funding_Item`;
+DROP TABLE IF EXISTS `Contributor`;
+DROP TABLE IF EXISTS `Order_Item`;
+
 CREATE TABLE `Member` (
     `member_id` BIGINT  NOT NULL    COMMENT 'Auto Increament',
     `nick_name` VARCHAR(20) NOT NULL,
