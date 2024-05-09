@@ -20,7 +20,11 @@ spec:
             - name: TZ
               value: Asia/Seoul
             - name: DATABASE_URL
-              value: jdbc:mysql://mysql/fundingboost
+              value: jdbc:mysql://mysql:3306/fundingboost
+			- name: MYSQL_USERNAME
+			  value: root
+			- name: MYSQL_ROOT_PASSWORD
+              value: root
           resources:
             requests:
               memory: 1Gi
