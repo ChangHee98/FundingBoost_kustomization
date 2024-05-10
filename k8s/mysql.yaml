@@ -34,6 +34,10 @@ spec:
           readinessProbe:
             tcpSocket:
               port: 3306
+		  command:
+            - "sh"
+            - "-c"
+            - "mysql -h mysql -u root -p$MYSQL_ROOT_PASSWORD < /docker-entrypoint-initdb.d/init.sql"	  
       volumes:
         - name: init-db
           configMap:
