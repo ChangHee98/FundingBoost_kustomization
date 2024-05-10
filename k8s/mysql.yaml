@@ -38,7 +38,7 @@ spec:
           command:
             - "sh"
             - "-c"
-            - "mysql -u root -p$MYSQL_ROOT_PASSWORD < /docker-entrypoint-initdb.d/init.sql"			  
+            - "mysql -h localhost -u root -p$MYSQL_ROOT_PASSWORD < /docker-entrypoint-initdb.d/init.sql"			  
       volumes:
         - name: init-db
           configMap:
