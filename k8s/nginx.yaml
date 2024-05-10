@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: docker.io/library/nginx:latest
+        image: krmp-d2hub-idock.9rum.cc/dev-test/repo_01a3d4e63d72
         ports:
         - containerPort: 80
         volumeMounts:
