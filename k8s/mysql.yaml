@@ -16,7 +16,8 @@ spec:
       containers:
         - name: mysql
           # 여러분의 mariadb image 주소를 입력해주세요.
-          image:  krmp-d2hub-idock.9rum.cc/dev-test/repo_ee3963c911c3
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_ee3963c911c3
+          imagePullPolicy: Always
           env:
             - name: TZ
               value: Asia/Seoul
@@ -34,10 +35,10 @@ spec:
           readinessProbe:
             tcpSocket:
               port: 3306
-		  command:
+		command:
             - "sh"
             - "-c"
-            - "mysql -u root -p$MYSQL_ROOT_PASSWORD < /docker-entrypoint-initdb.d/init.sql"	  
+            - "mysql -h mysql -u root -p$MYSQL_ROOT_PASSWORD < /docker-entrypoint-initdb.d/init.sql"			  
       volumes:
         - name: init-db
           configMap:
