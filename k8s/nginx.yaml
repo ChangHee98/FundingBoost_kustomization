@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: registry.hub.docker.com/library/nginx:latest
+        image: docker.io/library/nginx:latest
         ports:
         - containerPort: 80
         volumeMounts:
