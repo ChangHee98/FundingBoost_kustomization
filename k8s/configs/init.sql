@@ -20,32 +20,38 @@ DROP TABLE IF EXISTS `contributor`;
 DROP TABLE IF EXISTS `order_item`;
 
 CREATE TABLE `member` (
-                          `member_id` BIGINT  NOT NULL    COMMENT 'Auto Increament',
+                          `member_id` BIGINT  NOT NULL AUTO_INCREMENT COMMENT 'Auto Increament',
                           `nick_name` VARCHAR(20) NOT NULL,
                           `email` VARCHAR(50) NOT NULL    COMMENT '이메일은 == 아이디',
                           `password`  VARCHAR(100)    NOT NULL,
                           `profile_img_url`   VARCHAR(100)    NOT NULL,
-                          `point` INT NOT NULL    DEFAULT 0,
-                          `refresh_token` VARCHAR(255)    NULL,
-                          `kakao_uuid`    VARCHAR(100)    NOT NULL    COMMENT '카카오 api의 uuid 통해 감사 메시지 전송',
+                          `point` INT NOT NULL DEFAULT 0,
+                          `refresh_token` VARCHAR(255) DEFAULT NULL,
+                          `kakao_uuid`    VARCHAR(100) DEFAULT NULL    COMMENT '카카오 api의 uuid 통해 감사 메시지 전송',
+                          `created_date` datetime(6) DEFAULT NULL,
+                          `modified_date` datetime(6) DEFAULT NULL,
                           PRIMARY KEY (`member_id`)
 );
 CREATE TABLE `item` (
-                        `item_id`   BIGINT  NOT NULL    COMMENT 'Auto Increament',
-                        `item_name` VARCHAR(100)    NOT NULL,
+                        `item_id`   BIGINT  NOT NULL AUTO_INCREMENT COMMENT 'Auto Increament',
+                        `item_name` VARCHAR(100) NOT NULL,
                         `item_price`    INT NOT NULL,
                         `item_image_url`    VARCHAR(255)    NOT NULL,
                         `brand_name`    VARCHAR(100)    NOT NULL,
                         `category`  VARCHAR(100)  NOT NULL,
-                        `option_name`   VARCHAR(100)    NULL,
+                        `option_name`   VARCHAR(100) DEFAULT NULL,
+                        `created_date` datetime(6) DEFAULT NULL,
+                        `modified_date` datetime(6) DEFAULT NULL,
                         PRIMARY KEY (`item_id`)
 );
 CREATE TABLE `review` (
-                          `review_id` BIGINT  NOT NULL    COMMENT 'Auto Increament',
+                          `review_id` BIGINT  NOT NULL  AUTO_INCREMENT  COMMENT 'Auto Increament',
                           `rating`    INT NOT NULL    COMMENT '1~5',
                           `content`   VARCHAR(100)    NOT NULL,
                           `member_id` BIGINT  NOT NULL,
                           `item_id`   BIGINT  NOT NULL,
+                          `created_date` datetime(6) DEFAULT NULL,
+                          `modified_date` datetime(6) DEFAULT NULL,
                           primary key (`review_id`),
                           foreign key (`member_id`) references Member(member_id),
                           foreign key (`item_id`) references item(item_id)
@@ -56,6 +62,8 @@ CREATE TABLE `delivery` (
                             `phone_number`  VARCHAR(13) NULL,
                             `customer_name` VARCHAR(50) NULL,
                             `member_id` BIGINT  NOT NULL,
+                            `created_date` datetime(6) DEFAULT NULL,
+                            `modified_date` datetime(6) DEFAULT NULL,
                             primary key (`delivery_id`),
                             foreign key (`member_id`) references Member(member_id)
 );
