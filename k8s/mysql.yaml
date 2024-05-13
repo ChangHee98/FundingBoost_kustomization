@@ -27,8 +27,6 @@ spec:
             - mountPath: /var/lib/mysql
               name: data
               subPath: mysql
-            # - mountPath: /docker-entrypoint-initdb.d
-            #   name: init-db
           resources:
             limits:
               memory: 1Gi
@@ -37,8 +35,6 @@ spec:
               port: 3306 
       volumes:
         - name: init-db
-          # configMap:
-          #   name: init-db
   volumeClaimTemplates:
     - metadata:
         name: data
