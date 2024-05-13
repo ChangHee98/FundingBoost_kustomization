@@ -3,7 +3,3 @@ resources:
   - nginx.yaml
   - mysql.yaml
   - backend.yaml
-configMapGenerator:
-  - name: init-db
-    files:
-      - configs/init.sql
