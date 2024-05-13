@@ -1,1 +1,1 @@
-FROM node:20-slim
+FROM dlackdgml2/fundingboost-client:node
