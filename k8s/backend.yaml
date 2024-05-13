@@ -12,7 +12,7 @@ spec:
       labels:
         app: backend
     spec:
-	  replicas: 3
+      replicas: 3
       containers:
         - name: backend
           # 여러분의 backend image 주소를 입력해주세요.
