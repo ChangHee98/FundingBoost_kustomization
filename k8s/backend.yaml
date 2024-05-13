@@ -4,6 +4,7 @@ kind: Deployment
 metadata:
   name: backend
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: backend
@@ -12,7 +13,6 @@ spec:
       labels:
         app: backend
     spec:
-      replicas: 2
       containers:
         - name: backend
           # 여러분의 backend image 주소를 입력해주세요.
